@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :logged_in_only
+  before_action :logged_in_only, except: [:create]
 
   def create
     user = User.new(user_params)
@@ -30,6 +30,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.permit(:email, :phone_number, :address1, :address2, :city, :state, :zipcode, :first_name, :last_name, :password, :is_admin)
+    params.permit(:email, :phone_number, :address1, :address2, :city, :state, :zipcode, :first_name, :last_name, :password, :password_confirmation, :is_admin)
   end
 end

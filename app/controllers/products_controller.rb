@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :admin_only, only: [:create]
+
   def index 
     products = Product.all
     render json: {products: products}

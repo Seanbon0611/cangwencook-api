@@ -4,10 +4,11 @@ Rails.application.routes.draw do
   #user
   get 'user/profile', to: "users#data"
   post 'user/new', to: "users#create"
-  #shop
-  get 'shop/collections', to: "products#index"
+  patch 'user/profile', to: 'users#update_profile'
   #product
-  post 'product/new', to: 'products#create'
+  get 'products', to: "products#index"
+  post 'products/new', to: 'products#create'
+  
   #auth
   post 'signin', to: 'auth#login'
   get 'autologin', to: 'auth#auto_login'
