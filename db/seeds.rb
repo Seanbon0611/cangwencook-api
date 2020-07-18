@@ -17,6 +17,7 @@ m_pocket_tee = Product.create(name: "CGC Logo Pocket T-shirt", price: 29.99, inv
 
 order1 = Order.create(user_id: clark.id, total: 29.99, payment_status: 'Paid', shipped_status: true)
 
-lineitem1 = Lineitem.create(order_id: order1.id, product_id: m_pocket_tee.id)
+lineitem1 = Lineitem.create(order_id: order1.id, product_id: m_pocket_tee.id, quantity: 1)
+lineitem2 = Lineitem.create(order_id: order1.id, product_id: crew_neck.id, quantity: 1)
 
 
