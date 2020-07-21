@@ -25,3 +25,5 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+/config/can-gwen-cook-a1d89e38ff19.json
+/config/credentials.yml.enc

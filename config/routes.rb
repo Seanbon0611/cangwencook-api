@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   post 'products/new', to: 'products#create'
   
   #auth
-  post 'signin', to: 'auth#login'
+  post 'login', to: 'auth#login'
   get 'autologin', to: 'auth#auto_login'
   delete 'signout', to: 'auth#logout'
 end

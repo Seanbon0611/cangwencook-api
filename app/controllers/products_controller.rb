@@ -10,6 +10,10 @@ class ProductsController < ApplicationController
     new_product = Product.new(product_params)
 
     if new_product.save
+      blob = ActiveStorage::Blob.find_by(key: [params[:image]])
+            if blob
+                new_wine.image.attach(blob)
+            end
       render json: {msg: 'Successfully Create', id: new_product.id}, status: 200
     else
       render json: {msg: 'Could not create', error: new_product.errors.messages}, status: 409
@@ -18,6 +22,6 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.permit(:name, :price, :inventory, :category)
+    params.permit(:name, :price, :inventory, :category, :image)
   end
 end

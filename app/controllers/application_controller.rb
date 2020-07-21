@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::API
   include ::ActionController::Cookies
+  before_action :snake_case_params
 
   
   def admin?
@@ -61,4 +62,7 @@ class ApplicationController < ActionController::API
     end
   end
   
+  def snake_case_params
+    request.parameters.deep_transform_keys!(&:underscore)
+  end
 end

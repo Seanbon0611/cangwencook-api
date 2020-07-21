@@ -11,13 +11,13 @@ gwen = User.create(first_name: 'Gwen', last_name: 'Sioson', email: 'gwenpsioson@
 
 clark = User.create(first_name: 'Clark', last_name: 'Sioson', email: 'big_daddy_clark@gmail.com', phone_number: '+16503333333', address1: '111 Mission Street', city: 'San Francisco', state: 'California', zipcode: 57483, password: 'clarksioson', is_admin: false)
 
-crew_neck = Product.create(name: "CGC Logo Crew Neck", price: 44.99, inventory: 100, category: 'Unisex')
-f_vneck_tee = Product.create(name: "CGC Logo V Neck T-shirt", price: 24.99, inventory: 100, category: 'Women')
-m_pocket_tee = Product.create(name: "CGC Logo Pocket T-shirt", price: 29.99, inventory: 100, category: 'Men')
+crew_neck = Product.create(name: "CGC Logo Black Crew Neck", price: 44.99, inventory: 100, category: 'Unisex', image: 'https://storage.cloud.google.com/can-gwen-cook-pics/crewneck1.png')
+f_croptop = Product.create(name: "CGC Logo White Croptop", price: 24.99, inventory: 100, category: 'Women', image: 'https://storage.cloud.google.com/can-gwen-cook-pics/Logo_Standard-Color_mockup_Front_Womens-Lifestyle_White.jpg')
+m_vneck_blk = Product.create(name: "CGC Black V-Neck Tee", price: 29.99, inventory: 100, category: 'Men', image: 'https://storage.cloud.google.com/can-gwen-cook-pics/Logo_Standard-Color_mockup_Front_Mens-2_Black.png')
 
 order1 = Order.create(user_id: clark.id, total: 29.99, payment_status: 'Paid', shipped_status: true)
 
-lineitem1 = Lineitem.create(order_id: order1.id, product_id: m_pocket_tee.id, quantity: 1)
+lineitem1 = Lineitem.create(order_id: order1.id, product_id: m_vneck_blk.id, quantity: 1)
 lineitem2 = Lineitem.create(order_id: order1.id, product_id: crew_neck.id, quantity: 1)
 
 
