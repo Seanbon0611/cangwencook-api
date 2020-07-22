@@ -14,6 +14,7 @@ clark = User.create(first_name: 'Clark', last_name: 'Sioson', email: 'big_daddy_
 crew_neck = Product.create(name: "CGC Logo Black Crew Neck", price: 44.99, inventory: 100, category: 'Unisex', image: 'https://storage.cloud.google.com/can-gwen-cook-pics/crewneck1.png')
 f_croptop = Product.create(name: "CGC Logo White Croptop", price: 24.99, inventory: 100, category: 'Women', image: 'https://storage.cloud.google.com/can-gwen-cook-pics/Logo_Standard-Color_mockup_Front_Womens-Lifestyle_White.jpg')
 m_vneck_blk = Product.create(name: "CGC Black V-Neck Tee", price: 29.99, inventory: 100, category: 'Men', image: 'https://storage.cloud.google.com/can-gwen-cook-pics/Logo_Standard-Color_mockup_Front_Mens-2_Black.png')
+u_hoodie = Product.create(name: "CGC Black Hoodie", price: 52.99, inventory: 100, category: 'Unisex', image: 'https://storage.cloud.google.com/can-gwen-cook-pics/sweaterneck1.png')
 
 order1 = Order.create(user_id: clark.id, total: 29.99, payment_status: 'Paid', shipped_status: true)
 
