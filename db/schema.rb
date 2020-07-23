@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_21_043757) do
+ActiveRecord::Schema.define(version: 2020_07_23_165915) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,18 @@ ActiveRecord::Schema.define(version: 2020_07_21_043757) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "inventories", force: :cascade do |t|
+    t.integer "product_id"
+    t.integer "size_xs"
+    t.integer "size_s"
+    t.integer "size_m"
+    t.integer "size_l"
+    t.integer "size_xl"
+    t.integer "size_xxl"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "lineitems", force: :cascade do |t|
     t.integer "order_id"
     t.integer "product_id"
@@ -56,11 +68,11 @@ ActiveRecord::Schema.define(version: 2020_07_21_043757) do
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.float "price"
-    t.integer "inventory"
     t.string "category"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "image"
+    t.boolean "active"
   end
 
   create_table "users", force: :cascade do |t|

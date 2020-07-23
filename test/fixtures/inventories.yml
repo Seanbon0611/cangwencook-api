@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  product_id: 1
+  size_xs: 1
+  size_s: 1
+  size_m: 1
+  size_l: 1
+  size_xl: 1
+  size_xxl: 1
+
+two:
+  product_id: 1
+  size_xs: 1
+  size_s: 1
+  size_m: 1
+  size_l: 1
+  size_xl: 1
+  size_xxl: 1

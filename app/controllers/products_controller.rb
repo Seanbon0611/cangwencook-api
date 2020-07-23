@@ -12,7 +12,7 @@ class ProductsController < ApplicationController
     if new_product.save
       blob = ActiveStorage::Blob.find_by(key: [params[:image]])
             if blob
-                new_wine.image.attach(blob)
+                new_product.image.attach(blob)
             end
       render json: {msg: 'Successfully Create', id: new_product.id}, status: 200
     else
