@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  video_id: MyString
+  description: MyString
+  image: MyString
+  keto: false
+  gluten_free: false
+  low_calorie: false
+  paleo: false
+  dairy_free: false
+  vegetarian: false
+  quick: false
+
+two:
+  title: MyString
+  video_id: MyString
+  description: MyString
+  image: MyString
+  keto: false
+  gluten_free: false
+  low_calorie: false
+  paleo: false
+  dairy_free: false
+  vegetarian: false
+  quick: false

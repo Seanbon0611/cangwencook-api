@@ -1,12 +1,7 @@
 class OrderSerializer < ApplicationSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :total, :payment_status, :shipped_status, :created_at
-
-
-  attributes :products do |object|
-    object.products.each do |product|
-      product
-    end
-  end
+  attributes :total, :payment_status, :shipped_status, :created_at, :products, :lineitems
+  has_many :lineitems
+  has_many :products, though: :lineitems
 
 end

@@ -1,6 +1,6 @@
 class UserSerializer < ApplicationSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :email, :phone_number
+  attributes :email, :phone_number, :is_admin
 
   attributes :full_name do |object|
     object.first_name + " " + object.last_name
