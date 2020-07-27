@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   patch 'user/profile', to: 'users#update_profile'
   #order
   post 'order/new', to: "orders#create"
+  #lineitems
+  post 'lineitem/new', to: "lineitems#create"
   #recipes
   get 'recipes', to: "recipes#index"
 
