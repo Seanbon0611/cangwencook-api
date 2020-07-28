@@ -16,6 +16,13 @@ class OrdersController < ApplicationController
     end
 
   end
+  def complete_order 
+    user = User.find(params[:id])
+    order = Order.find(param[:id])
+
+    
+
+  end
 
   private
   def order_params

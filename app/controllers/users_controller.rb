@@ -12,6 +12,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def complete_order 
+    user = User.find(params[:id])
+    
+
+  end
+
   def admin_data
     users = User.all
     products = Product.all
