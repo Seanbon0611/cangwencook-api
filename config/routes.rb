@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   post 'lineitem/new', to: "lineitems#create"
   #recipes
   get 'recipes', to: "recipes#index"
-
+  #stripe
+  get 'secret', to: "stripe#payment"
   #product
   get 'products', to: "products#index"
   post 'products/new', to: 'products#create'
