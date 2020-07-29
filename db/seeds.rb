@@ -22,10 +22,19 @@ m_vneck_blk_inv = Inventory.create(product_id: m_vneck_blk.id, size_xs:20, size_
 u_hoodie_inv = Inventory.create(product_id: u_hoodie.id, size_xs:20, size_s:30, size_m:30, size_l:30, size_xl:30, size_xxl:20)
 order1 = Order.create(user_id: clark.id, total: 29.99, payment_status: 'Paid', shipped_status: true)
 
-korean_taco = Recipe.create(title: "Korean Ground Beef Tacos", video_id: 'UPM-gek01ms', description: "Korean Taco Description", image: "https://storage.cloud.google.com/can-gwen-cook-pics/tacos1.jpg", keto: true, gluten_free:true, low_calorie: true, paleo: true, dairy_free: true, vegetarian: false, quick: true)
-miso_lambchop = Recipe.create(title: "Miso Glaze Lambchops", video_id: 'kSVm82SpD_s', description: "Miso Glaze Lambchop Description", image: "https://storage.cloud.google.com/can-gwen-cook-pics/lamb.jpg", keto: true, gluten_free: true, low_calorie: false, paleo: true, dairy_free: true, vegetarian: false, quick: false)
-three_scones = Recipe.create(title: "Scones 3 ways", video_id: 'W9lTn9JXaDs', description: "Scones 3 different ways!", image: "https://storage.cloud.google.com/can-gwen-cook-pics/scones1.jpg", keto: true, gluten_free:true, low_calorie: false, paleo: false, dairy_free: false, vegetarian: false, quick: true)
-macademia_bread = Recipe.create(title: "Macademia Nut Bread", video_id: '1AHX8neY95U', description: "Macademia Nut Bread, amazing", image: "https://2.bp.blogspot.com/-UEEPRsmPGyM/UKBhEw1-M8I/AAAAAAAAAtM/pxhKm34FaWA/s1600/fat+bread+3.JPG", keto: true, gluten_free:true, low_calorie: false, paleo: false, dairy_free: false, vegetarian: true, quick: true)
+korean_taco = Recipe.create(title: "Korean Ground Beef Tacos", video_id: 'UPM-gek01ms', description: "Korean Taco Description", image: "https://storage.cloud.google.com/can-gwen-cook-pics/tacos1.jpg", keto: true, gluten_free:true, low_calorie: true, paleo: true, dairy_free: true, vegetarian: false, quick: true, calories: 1200, net_carbs: 11, protein: 165, fat:89)
+miso_lambchop = Recipe.create(title: "Miso Glaze Lambchops", video_id: 'kSVm82SpD_s', description: "Miso Glaze Lambchop Description", image: "https://storage.cloud.google.com/can-gwen-cook-pics/lamb.jpg", keto: true, gluten_free: true, low_calorie: false, paleo: true, dairy_free: true, vegetarian: false, quick: false, calories: 750, net_carbs: 1, protein: 70, fat:45)
+three_scones = Recipe.create(title: "Scones 3 ways", video_id: 'W9lTn9JXaDs', description: "Scones 3 different ways!", image: "https://storage.cloud.google.com/can-gwen-cook-pics/scones1.jpg", keto: true, gluten_free:true, low_calorie: false, paleo: false, dairy_free: false, vegetarian: false, quick: true, calories: 1100, net_carbs: 7, protein: 25, fat:60)
+macademia_bread = Recipe.create(title: "Macademia Nut Bread", video_id: '1AHX8neY95U', description: "Macademia Nut Bread, amazing", image: "https://2.bp.blogspot.com/-UEEPRsmPGyM/UKBhEw1-M8I/AAAAAAAAAtM/pxhKm34FaWA/s1600/fat+bread+3.JPG", keto: true, gluten_free:true, low_calorie: false, paleo: false, dairy_free: false, vegetarian: true, quick: true, calories: 1500, net_carbs: 12, protein: 12, fat:100)
+
+k_taco_step1 = Instruction.create(recipe_id: korean_taco.id, step: "Combine minced garlic, cubed Asian pear, 1/2 cup of coco aminos in a blender and puree.")
+k_taco_step2 = Instruction.create(recipe_id: korean_taco.id, step: "Pour into a large bowl and stir in the 1 cup of coco aminos, Monkfruit sweetener, sesame oil, and black pepper.")
+k_taco_step3 = Instruction.create(recipe_id: korean_taco.id, step: "Pour mixture on top of the ground beef. Mix well with spoon or hands.")
+k_taco_step4 = Instruction.create(recipe_id: korean_taco.id, step: "Heat up a large pan with 1 tablespoon of avocado oil.")
+k_taco_step5 = Instruction.create(recipe_id: korean_taco.id, step: "Cook ground beef mixture until meat turns brown.")
+k_taco_step6 = Instruction.create(recipe_id: korean_taco.id, step: "Use the pickled radish as a mini-taco shell. Add a bit of kimchee on top for a little spice")
+
+
 
 lineitem1 = Lineitem.create(order_id: order1.id, product_id: m_vneck_blk.id, quantity: 1)
 lineitem2 = Lineitem.create(order_id: order1.id, product_id: crew_neck.id, quantity: 1)
