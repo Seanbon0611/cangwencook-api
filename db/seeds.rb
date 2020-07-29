@@ -34,6 +34,17 @@ k_taco_step4 = Instruction.create(recipe_id: korean_taco.id, step: "Heat up a la
 k_taco_step5 = Instruction.create(recipe_id: korean_taco.id, step: "Cook ground beef mixture until meat turns brown.")
 k_taco_step6 = Instruction.create(recipe_id: korean_taco.id, step: "Use the pickled radish as a mini-taco shell. Add a bit of kimchee on top for a little spice")
 
+k_taco_ingredient1 = Ingredient.create(recipe_id: korean_taco.id, name: "Ground Beef", measurement: "2 lbs")
+k_taco_ingredient2 = Ingredient.create(recipe_id: korean_taco.id, name: "Asian Pear", measurement: "1")
+k_taco_ingredient3 = Ingredient.create(recipe_id: korean_taco.id, name: "Coco amino liquid seasoning", measurement: "1 cup")
+k_taco_ingredient4 = Ingredient.create(recipe_id: korean_taco.id, name: "Minced garlic", measurement: "4 tablespoons")
+k_taco_ingredient5 = Ingredient.create(recipe_id: korean_taco.id, name: "Monkfruit sweetener", measurement: "1/2 cup")
+k_taco_ingredient6 = Ingredient.create(recipe_id: korean_taco.id, name: "Sesame oil", measurement: "1/2 cup")
+k_taco_ingredient7 = Ingredient.create(recipe_id: korean_taco.id, name: "Black pepper", measurement: "1/4 teaspoon")
+k_taco_ingredient8 = Ingredient.create(recipe_id: korean_taco.id, name: "Pickled radish", measurement: "1 package")
+k_taco_ingredient9 = Ingredient.create(recipe_id: korean_taco.id, name: "Kimchi", measurement: "2 cups")
+k_taco_ingredient10 = Ingredient.create(recipe_id: korean_taco.id, name: "Avocado oil", measurement: "1 tablespoon")
+
 
 
 lineitem1 = Lineitem.create(order_id: order1.id, product_id: m_vneck_blk.id, quantity: 1)
