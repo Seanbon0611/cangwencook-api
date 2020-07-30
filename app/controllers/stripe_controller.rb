@@ -1,16 +1,14 @@
 class StripeController < ApplicationController
   
-  def payment
+  def payment(amount=1000)
     intent = Stripe::PaymentIntent.create({
-      amount: 100,
+      amount: amount,
       currency: 'usd',
-      # Verify your integration in this guide by including this parameter
-      metadata: {integration_check: 'accept_a_payment'},
     })
     if intent.save
-      render json: {msg: "Success", obj: intent}, status: 200
+      render json: intent.client_secret, status: 200
     else 
-      render json: {error: "Failed!"}, status: 404
+      render json: {error: "Failed!"}, status: 500
     end
   end
   

@@ -12,10 +12,10 @@ class UsersController < ApplicationController
     end
   end
 
-  def complete_order 
-    user = User.find(params[:id])
-    
+  def update 
+    current_user.update(user_params)
 
+    render json: {msg: 'Updated Record', profile: ProfileSerializer.new(current_user)}, status: 200
   end
 
   def admin_data

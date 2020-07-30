@@ -7,12 +7,14 @@ Rails.application.routes.draw do
   patch 'user/profile', to: 'users#update_profile'
   #order
   post 'order/new', to: "orders#create"
+  post 'order/complete', to: "orders#complete_order"
   #lineitems
   post 'lineitem/new', to: "lineitems#create"
+  patch 'lineitem/remove', to: "lineitems#reduce_quantity"
   #recipes
   get 'recipes', to: "recipes#index"
   #stripe
-  get 'secret', to: "stripe#payment"
+  post 'secret', to: "stripe#payment"
   #product
   get 'products', to: "products#index"
   post 'products/new', to: 'products#create'

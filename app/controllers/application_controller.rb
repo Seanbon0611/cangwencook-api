@@ -15,6 +15,10 @@ class ApplicationController < ActionController::API
     user ||= User.find_by(id: user_id)
   end
 
+  def current_order
+    current_user.orders.find_by(payment_status: "pending")
+  end
+
   def user_first_name
     current_user.first_name
   end
@@ -22,7 +26,11 @@ class ApplicationController < ActionController::API
   def user_email
     current_user.email
   end
-  
+
+  def user_id
+    current_user.id
+  end
+
   private
 
   def decoded_token

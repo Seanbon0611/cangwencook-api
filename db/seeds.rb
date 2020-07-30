@@ -11,10 +11,16 @@ gwen = User.create(first_name: 'Gwen', last_name: 'Sioson', email: 'gwenpsioson@
 
 clark = User.create(first_name: 'Clark', last_name: 'Sioson', email: 'big_daddy_clark@gmail.com', phone_number: '+16503333333', address1: '111 Mission Street', city: 'San Francisco', state: 'California', zipcode: 57483, password: 'clarksioson', is_admin: false)
 
-crew_neck = Product.create(name: "CGC Logo Black Crew Neck", price: 44.99, active:true, category: 'Unisex', image: 'https://storage.cloud.google.com/can-gwen-cook-pics/crewneck1.png')
-f_croptop = Product.create(name: "CGC Logo White Croptop", price: 24.99, active:true, category: 'Women', image: 'https://storage.cloud.google.com/can-gwen-cook-pics/Logo_Standard-Color_mockup_Front_Womens-Lifestyle_White.jpg')
-m_vneck_blk = Product.create(name: "CGC Black V-Neck Tee", price: 29.99, active:true, category: 'Men', image: 'https://storage.cloud.google.com/can-gwen-cook-pics/Logo_Standard-Color_mockup_Front_Mens-2_Black.png')
-u_hoodie = Product.create(name: "CGC Black Hoodie", price: 52.99, active:true, category: 'Unisex', image: 'https://storage.cloud.google.com/can-gwen-cook-pics/sweaterneck1.png')
+crew_neck = Product.create(name: "Logo Black Crew Neck", price: 44.99, active:true, category: 'Unisex', image: 'https://storage.cloud.google.com/can-gwen-cook-pics/crewneck1.png', alt_image1: "https://storage.cloud.google.com/can-gwen-cook-pics/comingsoon.jpg", alt_image2: "https://storage.cloud.google.com/can-gwen-cook-pics/comingsoon.jpg", alt_image3:"https://storage.cloud.google.com/can-gwen-cook-pics/comingsoon.jpg")
+f_croptop = Product.create(name: "Logo White Croptop", price: 24.99, active:true, category: 'Women', image: 'https://storage.cloud.google.com/can-gwen-cook-pics/Logo_Standard-Color_mockup_Front_Womens-Lifestyle_White.jpg', alt_image1: "https://storage.cloud.google.com/can-gwen-cook-pics/Logo_Standard-Color_mockup_Front_Flat_White.jpg", alt_image2: "https://storage.cloud.google.com/can-gwen-cook-pics/comingsoon.jpg", alt_image3:"https://storage.cloud.google.com/can-gwen-cook-pics/comingsoon.jpg")
+m_vneck_blk = Product.create(name: "Logo Black V-Neck Tee", price: 29.99, active:true, category: 'Men', image: 'https://storage.cloud.google.com/can-gwen-cook-pics/Logo_Standard-Color_mockup_Front_Mens-2_Black.png', alt_image1: "https://storage.cloud.google.com/can-gwen-cook-pics/Logo_Standard-Color_mockup_Front_Flat_Black.png", alt_image2: "https://storage.cloud.google.com/can-gwen-cook-pics/comingsoon.jpg", alt_image3:"https://storage.cloud.google.com/can-gwen-cook-pics/comingsoon.jpg")
+u_hoodie = Product.create(name: "Logo Black Hoodie", price: 52.99, active:true, category: 'Unisex', image: 'https://storage.cloud.google.com/can-gwen-cook-pics/sweaterneck1.png', alt_image1: "https://storage.cloud.google.com/can-gwen-cook-pics/comingsoon.jpg", alt_image2: "https://storage.cloud.google.com/can-gwen-cook-pics/comingsoon.jpg", alt_image3:"https://storage.cloud.google.com/can-gwen-cook-pics/comingsoon.jpg")
+f_tanktop_blk = Product.create(name: "Logo Black Tanktop", price: 23.99, active:true, category: 'Women', image: 'https://storage.cloud.google.com/can-gwen-cook-pics/Logo_Standard-Color_mockup_Front_Woman_White.png', alt_image1: "https://storage.cloud.google.com/can-gwen-cook-pics/comingsoon.jpg", alt_image2: "https://storage.cloud.google.com/can-gwen-cook-pics/comingsoon.jpg", alt_image3:"https://storage.cloud.google.com/can-gwen-cook-pics/comingsoon.jpg")
+m_vneck_red = Product.create(name: "Logo Red V-Neck Tee", price: 29.99, active:true, category: 'Men', image: 'https://storage.cloud.google.com/can-gwen-cook-pics/Logo_Standard-Color_mockup_Front_Mens-2_Red.png', alt_image1: "https://storage.cloud.google.com/can-gwen-cook-pics/Logo_Standard-Color_mockup_Front_Flat_Red.png", alt_image2: "https://storage.cloud.google.com/can-gwen-cook-pics/comingsoon.jpg", alt_image3:"https://storage.cloud.google.com/can-gwen-cook-pics/comingsoon.jpg")
+windbreaker = Product.create(name: "Logo Grey Windbreaker", price: 59.99, active:true, category: 'Unisex', image: 'https://storage.cloud.google.com/can-gwen-cook-pics/comingsoon.jpg', alt_image1: "https://storage.cloud.google.com/can-gwen-cook-pics/comingsoon.jpg", alt_image2: "https://storage.cloud.google.com/can-gwen-cook-pics/comingsoon.jpg", alt_image3:"https://storage.cloud.google.com/can-gwen-cook-pics/comingsoon.jpg")
+joggers = Product.create(name: "Logo Joggers", price: 52.99, active:true, category: 'Unisex', image: 'https://storage.cloud.google.com/can-gwen-cook-pics/comingsoon.jpg', alt_image1: "https://storage.cloud.google.com/can-gwen-cook-pics/comingsoon.jpg", alt_image2: "https://storage.cloud.google.com/can-gwen-cook-pics/comingsoon.jpg", alt_image3:"https://storage.cloud.google.com/can-gwen-cook-pics/comingsoon.jpg")
+apron = Product.create(name: "Logo Apron", price: 34.99, active:true, category: 'Unisex', image: 'https://storage.cloud.google.com/can-gwen-cook-pics/comingsoon.jpg', alt_image1: "https://storage.cloud.google.com/can-gwen-cook-pics/comingsoon.jpg", alt_image2: "https://storage.cloud.google.com/can-gwen-cook-pics/comingsoon.jpg", alt_image3:"https://storage.cloud.google.com/can-gwen-cook-pics/comingsoon.jpg")
+
 
 crew_neck_inv = Inventory.create(product_id: crew_neck.id, size_xs:20, size_s:30, size_m:30, size_l:30, size_xl:30, size_xxl:20)
 f_croptop_inv = Inventory.create(product_id: f_croptop.id, size_xs:20, size_s:30, size_m:30, size_l:30, size_xl:30, size_xxl:20)
@@ -33,6 +39,26 @@ k_taco_step3 = Instruction.create(recipe_id: korean_taco.id, step: "Pour mixture
 k_taco_step4 = Instruction.create(recipe_id: korean_taco.id, step: "Heat up a large pan with 1 tablespoon of avocado oil.")
 k_taco_step5 = Instruction.create(recipe_id: korean_taco.id, step: "Cook ground beef mixture until meat turns brown.")
 k_taco_step6 = Instruction.create(recipe_id: korean_taco.id, step: "Use the pickled radish as a mini-taco shell. Add a bit of kimchee on top for a little spice")
+
+
+lamb_step1 = Instruction.create(recipe_id: miso_lambchop.id, step: "Bring the 1 tablespoon of rice vinegar, 3 tablespoon of water and ¼ cup of mirin to a boil in a medium saucepan over high heat. Boil for 20 seconds to evaporate the alcohol.")
+lamb_step2 = Instruction.create(recipe_id: miso_lambchop.id, step: "Turn the heat down to low, add the miso paste, and whisk. When the miso has dissolved completely, turn the heat up to high again and add the sugar, whisking constantly to ensure that the sugar doesn't burn on the bottom of the pan.")
+lamb_step3 = Instruction.create(recipe_id: miso_lambchop.id, step: "Remove from heat once the sugar is fully dissolved. Cool to room temperature.")
+lamb_step4 = Instruction.create(recipe_id: miso_lambchop.id, step: "Place lamb chops in a container. Pour room temperature marinade on top. Marinate for a minimum of 8 hours.")
+lamb_step5 = Instruction.create(recipe_id: miso_lambchop.id, step: "In a non-stick frying pan, add 1 tablespoon of avocado oil on med heat.")
+lamb_step6 = Instruction.create(recipe_id: miso_lambchop.id, step: "Place 2-3 lamb chops in the pan for each round. Shake off any excess marinade before adding to pan or it will burn .")
+lamb_step7 = Instruction.create(recipe_id: miso_lambchop.id, step: "Flip lamb chop over after 3-4 mins or until nicely charred on the outside and just cooked through on the inside.")
+lamb_step8 = Instruction.create(recipe_id: miso_lambchop.id, step: "Once both sides are charred, place lamb chop on a plate and let it rest for 3-4 mins before eating. Serve the lamb chops with your favorite side dish like cauliflower rice or mash potatoes.")
+
+lamb_ingredient1 = Ingredient.create(recipe_id: miso_lambchop.id, name: "Lamb Chop", measurement: "1 Rack(cut into single chops)")
+lamb_ingredient2 = Ingredient.create(recipe_id: miso_lambchop.id, name: "White miso paste", measurement: "4 tablespoons")
+lamb_ingredient3 = Ingredient.create(recipe_id: miso_lambchop.id, name: "Monkfruit sweetener", measurement: "3 tablespoons")
+lamb_ingredient4 = Ingredient.create(recipe_id: miso_lambchop.id, name: "Mirin", measurement: "1/4 Cup")
+lamb_ingredient5 = Ingredient.create(recipe_id: miso_lambchop.id, name: "Rice vinegar", measurement: "1 tablespoon")
+lamb_ingredient6 = Ingredient.create(recipe_id: miso_lambchop.id, name: "Water", measurement: "3 tablespoons")
+lamb_ingredient7 = Ingredient.create(recipe_id: miso_lambchop.id, name: "Avocado Oil", measurement: "1 tablespoon")
+
+
 
 k_taco_ingredient1 = Ingredient.create(recipe_id: korean_taco.id, name: "Ground Beef", measurement: "2 lbs")
 k_taco_ingredient2 = Ingredient.create(recipe_id: korean_taco.id, name: "Asian Pear", measurement: "1")

@@ -5,21 +5,35 @@ class LineitemsController < ApplicationController
     order = Order.find(params[:order_id])
     product = Product.find(params[:product_id])
     line_items = order.lineitems
-    
     #find or create by order_id, product_id
     match = line_items.find do |item|
-      lineitem_params.product_id == item.id
+      lineitem_params[:product_id] == item.product_id
     end 
     if match
       match.update(quantity: match.quantity += 1)
       render json: {msg: "quantity updated", id: match.id, quantity: match.quantity}, status: 200
     else
-      new_line_item = Lineitem.create(order_id: order, product_id: product)
-      render json: {msg: "added item to order", id: new_line_item.id, product: product}
+      new_line_item = Lineitem.new(lineitem_params)
+      if new_line_item.save
+        render json: {msg: "added item to order", id: new_line_item.id, product: product}, status: 200
+      else
+        render json: {error: "there was an error"}, status: 409
+      end
     end
   end
 
-  #look into build
+  def reduce_quantity
+    line_item = Lineitem.find(params[:id])
+    if (line_item.quantity > 1)
+      line_item.update(quantity: line_item.quantity -= 1)
+      render json: {msg: "item updated", id: line_item.id, quantity: line_item.quantity}, status: 200
+    elsif (line_item.quantity == 1)
+      line_item.destroy 
+      render json: {msg: "item removed"}, status: 200
+    end
+  end
+
+
   private
   def lineitem_params
     params.permit(:product_id, :order_id, :quantity)

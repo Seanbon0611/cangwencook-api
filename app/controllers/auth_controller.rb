@@ -26,7 +26,7 @@ class AuthController < ApplicationController
   end
 
   def respond_logged_in(expiry = nil)
-    render json: {email: user_email, firstName: user_first_name, isAdmin: admin?, msg: "Login Success", loggedIn: true, expires: expiry}, status: 200
-end
+    render json: {id: user_id, email: user_email, firstName: user_first_name, currentOrder: OrderSerializer.new(current_order), isAdmin: admin?, msg: "Login Success", loggedIn: true, expires: expiry}, status: 200
+  end
 
 end

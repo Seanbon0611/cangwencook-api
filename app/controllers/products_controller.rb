@@ -8,7 +8,6 @@ class ProductsController < ApplicationController
 
   def create
     new_product = Product.new(product_params)
-    add_inventory = Inventory.new(inventory_params)
 
     if new_product.save
       blob = ActiveStorage::Blob.find_by(key: [params[:image]])
@@ -22,11 +21,8 @@ class ProductsController < ApplicationController
   end
 
   private
+
   def product_params
     params.permit(:name, :price, :inventories, :category, :image)
-  end
-
-  def inventory_params
-    params.permit(:size_xs, :size_s, :size_m, :size_l, :size_xl, :size_xxl)
   end
 end
