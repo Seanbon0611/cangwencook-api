@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     user = User.new(user_params)
     
     if user.save
-      order = Order.create(user_id: user.id, total:0.00, payment_status:false, shipped_status: false)
+      order = Order.create(user_id: user.id)
       render json: {msg: "Successfully Created", id: user.id, order: order}, status: 200
     else
       render json: {msg: "Failed to Create", error: user.errors.messages}, status: 409
