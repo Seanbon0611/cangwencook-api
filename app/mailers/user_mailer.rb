@@ -1,4 +1,5 @@
 class UserMailer < ApplicationMailer
+  
   def password_reset(user)
     @recipient = user
 

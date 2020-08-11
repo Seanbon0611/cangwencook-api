@@ -23,4 +23,7 @@ Rails.application.routes.draw do
   post 'login', to: 'auth#login'
   get 'autologin', to: 'auth#auto_login'
   delete 'signout', to: 'auth#logout'
+
+  #password reset
+  post 'password_reset', to: 'password_resets#create'
 end
