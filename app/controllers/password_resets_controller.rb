@@ -1,4 +1,5 @@
 class PasswordResetsController < ApplicationController
+  before_action :set_user, only: [:edit, :update]
   def create
     user = User.find_by(email: params[:email])
     if user
@@ -12,10 +13,31 @@ class PasswordResetsController < ApplicationController
     render json: :ok
   end
 
-  private
+  def user_token
+    user = User.find_by(email: params[:email])
+    if user
+      render json: {token: user.reset_password_token}
+    else
+      render json: {error: "There was an error"}
+    end
+  end
 
+  def reset
+    user = User.find_by(reset_password_token: params[:token])
+    if user
+      user.update(password: params[:password], password_confirmation: params[:password_confirmation])
+      if user.save
+        user.clear_password_token!
+        render json: {msg: "Success"}, status: 200
+      else
+        render json: {error: "Password not changed"}, status: 401
+      end
+    end
+  end
+
+  private
   def set_user
     @user = User.find_by(reset_password_token: params[:token])
-    raise ResetPasswordError unless @user&.reset_password_token_expires_at && @user.reset_password_token_expires_at > Time.now
   end
+
 end

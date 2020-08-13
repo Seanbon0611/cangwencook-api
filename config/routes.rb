@@ -25,5 +25,7 @@ Rails.application.routes.draw do
   delete 'signout', to: 'auth#logout'
 
   #password reset
-  post 'password_reset', to: 'password_resets#create'
+  post 'forgot_password', to: 'password_resets#create'
+  get 'token', to: 'password_resets#user_token'
+  patch 'reset_password', to: 'password_resets#reset'
 end

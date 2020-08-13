@@ -24,4 +24,5 @@ class User < ApplicationRecord
     self.reset_password_token_expires_at = nil
     save!
   end
+
 end
