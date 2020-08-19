@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     if admin? 
       render json: {users: UserSerializer.new(users), orders: OrderSerializer.new(orders), products: ProductSerializer.new(products)}, status: 200
     else
-      render json: {error: "Unauthorized Access"}, status: 404
+      render json: {error: "Unauthorized Access"}, status: 401
     end
 
   end

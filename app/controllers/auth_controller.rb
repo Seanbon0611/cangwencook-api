@@ -7,7 +7,7 @@ class AuthController < ApplicationController
     end
     if my_token
       cookies.signed[:jwt] = {value: my_token, httponly: true, expires: 3.hours.from_now}
-      respond_logged_in 45.minutes.from_now
+      respond_logged_in(45.minutes.from_now) 
     else
         render json: {error: 'Username or Password incorrect', loggedIn: false}, status: 401
     end
@@ -16,7 +16,7 @@ class AuthController < ApplicationController
   def auto_login
     if logged_in?
       cookies.signed[:jwt] = {value: token, httponly: true, expires: 3.hours.from_now}
-      respond_logged_in 10.minutes.from_now
+      respond_logged_in(10.minutes.from_now)
     end
   end
 
