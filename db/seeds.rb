@@ -28,9 +28,9 @@ m_vneck_blk_inv = Inventory.create(product_id: m_vneck_blk.id, size_xs:20, size_
 u_hoodie_inv = Inventory.create(product_id: u_hoodie.id, size_xs:20, size_s:30, size_m:30, size_l:30, size_xl:30, size_xxl:20)
 order1 = Order.create(user_id: clark.id, total: 29.99, payment_status: 'Paid', shipped_status: true)
 
-korean_taco = Recipe.create(title: "Korean Ground Beef Tacos", video_id: 'UPM-gek01ms', description: "Korean Taco Description", image: "https://storage.cloud.google.com/can-gwen-cook-pics/tacos1.jpg", keto: true, gluten_free:true, low_calorie: true, paleo: true, dairy_free: true, vegetarian: false, quick: true, calories: 1200, net_carbs: 11, protein: 165, fat:89)
-miso_lambchop = Recipe.create(title: "Miso Glaze Lambchops", video_id: 'kSVm82SpD_s', description: "Miso Glaze Lambchop Description", image: "https://storage.cloud.google.com/can-gwen-cook-pics/lamb.jpg", keto: true, gluten_free: true, low_calorie: false, paleo: true, dairy_free: true, vegetarian: false, quick: false, calories: 750, net_carbs: 1, protein: 70, fat:45)
-three_scones = Recipe.create(title: "Scones 3 ways", video_id: 'W9lTn9JXaDs', description: "Scones 3 different ways!", image: "https://storage.cloud.google.com/can-gwen-cook-pics/scones1.jpg", keto: true, gluten_free:true, low_calorie: false, paleo: false, dairy_free: false, vegetarian: false, quick: true, calories: 1100, net_carbs: 7, protein: 25, fat:60)
+korean_taco = Recipe.create(title: "Korean Ground Beef Tacos", video_id: 'UPM-gek01ms', description: "Korean-inspired flavors in the form of tacos", image: "https://storage.cloud.google.com/can-gwen-cook-pics/tacos1.jpg", keto: true, gluten_free:true, low_calorie: true, paleo: true, dairy_free: true, vegetarian: false, quick: true, calories: 1200, net_carbs: 11, protein: 165, fat:89)
+miso_lambchop = Recipe.create(title: "Miso Glaze Lambchops", video_id: 'kSVm82SpD_s', description: "Miso Glaze Lambchop packed full of flavor", image: "https://storage.cloud.google.com/can-gwen-cook-pics/lamb.jpg", keto: true, gluten_free: true, low_calorie: false, paleo: true, dairy_free: true, vegetarian: false, quick: false, calories: 750, net_carbs: 1, protein: 70, fat:45)
+three_scones = Recipe.create(title: "Scone Party", video_id: 'W9lTn9JXaDs', description: "Three different flavored scones", image: "https://storage.cloud.google.com/can-gwen-cook-pics/scones1.jpg", keto: true, gluten_free:true, low_calorie: false, paleo: false, dairy_free: false, vegetarian: false, quick: true, calories: 1100, net_carbs: 7, protein: 25, fat:60)
 macademia_bread = Recipe.create(title: "Macademia Nut Bread", video_id: '1AHX8neY95U', description: "Macademia Nut Bread, amazing", image: "https://2.bp.blogspot.com/-UEEPRsmPGyM/UKBhEw1-M8I/AAAAAAAAAtM/pxhKm34FaWA/s1600/fat+bread+3.JPG", keto: true, gluten_free:true, low_calorie: false, paleo: false, dairy_free: false, vegetarian: true, quick: true, calories: 1500, net_carbs: 12, protein: 12, fat:100)
 
 k_taco_step1 = Instruction.create(recipe_id: korean_taco.id, step: "Combine minced garlic, cubed Asian pear, 1/2 cup of coco aminos in a blender and puree.")
@@ -58,6 +58,14 @@ lamb_ingredient5 = Ingredient.create(recipe_id: miso_lambchop.id, name: "Rice vi
 lamb_ingredient6 = Ingredient.create(recipe_id: miso_lambchop.id, name: "Water", measurement: "3 tablespoons")
 lamb_ingredient7 = Ingredient.create(recipe_id: miso_lambchop.id, name: "Avocado Oil", measurement: "1 tablespoon")
 
+scones_ingredient1 = Ingredient.create(recipe_id: three_scones.id, name: "Almond Flour", measurement: "2 Cups")
+scones_ingredient2 = Ingredient.create(recipe_id: three_scones.id, name: "Baking Powder", measurement: "2 Teaspoons")
+scones_ingredient3 = Ingredient.create(recipe_id: three_scones.id, name: "Garlic Powder", measurement: "1/2 Teaspoon")
+scones_ingredient4 = Ingredient.create(recipe_id: three_scones.id, name: "Onion Powder", measurement: "1/2 Teaspoon")
+scones_ingredient5 = Ingredient.create(recipe_id: three_scones.id, name: "Kosher Salt", measurement: "1/2 Teaspoon")
+scones_ingredient6 = Ingredient.create(recipe_id: three_scones.id, name: "Fresh Cracked Pepper", measurement: "A few crackles")
+scones_ingredient7 = Ingredient.create(recipe_id: three_scones.id, name: "Eggs", measurement: "2 servings")
+scones_ingredient8 = Ingredient.create(recipe_id: three_scones.id, name: "Melted butter", measurement: "1/2 cup")
 
 
 k_taco_ingredient1 = Ingredient.create(recipe_id: korean_taco.id, name: "Ground Beef", measurement: "2 lbs")
