@@ -74,7 +74,7 @@ test:
 #
 production:
   <<: *default
-  url: Rails.application.credentials.heroku[:url]
   database: Rails.application.credentials.heroku[:database]
   username: Rails.application.credentials.heroku[:user]
   password: Rails.application.credentials.heroku[:password]
+  url: postgres://udythqnlnyxljk:c40bde543e8f7025b76b48be868fdd78026eb20aa46c0d5d67bf33a6dc6dc5ba@ec2-52-207-124-89.compute-1.amazonaws.com:5432/dbrgeltuv5n16h
