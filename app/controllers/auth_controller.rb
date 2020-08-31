@@ -16,7 +16,7 @@ class AuthController < ApplicationController
   def auto_login
     if logged_in?
       cookies.signed[:jwt] = {value: token, httponly: true, expires: 3.hours.from_now}
-      respond_logged_in 10.minutes.from_now
+      respond_logged_in 2.hours.from_now
     end
   end
 

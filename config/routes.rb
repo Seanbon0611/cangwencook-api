@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   patch 'lineitem/remove', to: "lineitems#reduce_quantity"
   #recipes
   get 'recipes', to: "recipes#index"
+  post 'recipes/new', to: "recipes#create"
+  patch 'recipes/edit', to: "recipes#edit"
   #stripe
   post 'secret', to: "stripe#payment"
   #product
