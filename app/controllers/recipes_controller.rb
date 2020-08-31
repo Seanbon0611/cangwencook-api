@@ -31,9 +31,28 @@ class RecipesController < ApplicationController
         step = Instruction.create(recipe_id: recipe.id, step: instruction_param[:step])
         instructions << step
       end
-      render json: {msg: "success"}
+      render json: {msg: "success"}, status: 200
     else
-      render json: {error: "There was an error"}
+      render json: {error: "There was an error"}, status: 500
+    end
+  end
+
+  def delete_recipe
+    recipe = Recipe.find(params[:id])
+    # instructions = Instruction.where(:recipe_id => recipe.id)
+    # ingredients = Ingredient.where(:recipe_id => recipe.id)
+    # instructions.each do |inst|
+    #   inst.destroy
+    # end
+    # ingredients.each do |ingr|
+    #   ingr.destroy
+    # end
+    recipe.destroy
+
+    if recipe.destroyed?
+      render json: {msg: "Recipe deleted"}, status: 200
+    else
+      render json: {error: "there was an error"}
     end
   end
 
