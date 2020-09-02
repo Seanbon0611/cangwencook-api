@@ -31,4 +31,6 @@ Rails.application.routes.draw do
   post 'forgot_password', to: 'password_resets#create'
   get 'token', to: 'password_resets#user_token'
   patch 'reset_password', to: 'password_resets#reset'
+
+  post 'images/direct_upload', to: "uploads#create"
 end

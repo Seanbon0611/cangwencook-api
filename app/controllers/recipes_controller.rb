@@ -21,6 +21,10 @@ class RecipesController < ApplicationController
       protein: params[:protein]
     )
     if recipe.save
+      blob = ActiveStorage::Blob.find_by(key: [params[:image]])
+      if blob 
+        recipe.image.attach(blob)
+      end
       instructions = []
       ingredients = []
       recipe_params[:ingredients].each do |ingredient_param|
@@ -39,14 +43,6 @@ class RecipesController < ApplicationController
 
   def delete_recipe
     recipe = Recipe.find(params[:id])
-    # instructions = Instruction.where(:recipe_id => recipe.id)
-    # ingredients = Ingredient.where(:recipe_id => recipe.id)
-    # instructions.each do |inst|
-    #   inst.destroy
-    # end
-    # ingredients.each do |ingr|
-    #   ingr.destroy
-    # end
     recipe.destroy
 
     if recipe.destroyed?
