@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   #recipes
   get 'recipes', to: "recipes#index"
   post 'recipes/new', to: "recipes#create"
-  patch 'recipes/edit', to: "recipes#edit"
+  patch 'recipes/:id/edit', to: "recipes#update"
   delete 'recipes/:id/delete', to: "recipes#delete_recipe"
   #stripe
   post 'secret', to: "stripe#payment"

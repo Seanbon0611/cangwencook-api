@@ -40,6 +40,45 @@ class RecipesController < ApplicationController
       render json: {error: "There was an error"}, status: 500
     end
   end
+  
+  def update
+    recipe = Recipe.find(params[:id])
+    instructions = recipe.instructions.all
+    ingredients = recipe.ingredients.all
+    recipe.update(
+      title: params[:title],
+      description: params[:description],
+      image: params[:image],
+      keto: params[:keto],
+      gluten_free: params[:gluten_free],
+      low_calorie: params[:low_calorie],
+      paleo: params[:paleo],
+      dairy_free: params[:dairy_free],
+      quick: params[:quick],
+      calories: params[:calories],
+      net_carbs: params[:net_carbs],
+      fat: params[:fat],
+      protein: params[:protein]
+    )
+    params[:ingredients].each do |ingredient|
+      matched_ingredient = Ingredient.find(ingredient[:id])
+      matched_ingredient.update(name: ingredient[:name], measurement: ingredient[:measurement])
+    end
+
+    params[:instructions].each do |instruction|
+      if !instruction[:id]
+        Instruction.create(recipe_id: recipe.id, step: instruction[:step])
+      else
+        matched_instruction = Instruction.find(instruction[:id])
+        matched_instruction.update(step: instruction[:step])
+      end
+    end
+    if recipe.save
+      render json: recipe_json(recipe), status: 200
+    else
+      render json: { error: 'There were an error' }
+    end
+  end
 
   def delete_recipe
     recipe = Recipe.find(params[:id])
@@ -52,8 +91,42 @@ class RecipesController < ApplicationController
     end
   end
 
+  def recipe_json(recipe)
+    {
+      id: recipe.id,
+      title: recipe.title,
+      description: recipe.description,
+      image: recipe.image,
+      keto: recipe.keto,
+      gluten_free: recipe.gluten_free,
+      low_calorie: recipe.low_calorie,
+      paleo: recipe.paleo,
+      dairy_free: recipe.dairy_free,
+      quick: recipe.quick,
+      calories: recipe.calories,
+      net_carbs: recipe.net_carbs,
+      fat: recipe.fat,
+      protein: recipe.protein,
+      ingredients: recipe.ingredients.map do |ingredient|
+        {
+          id: ingredient.id,
+          recipe_id: ingredient.recipe_id,
+          name: ingredient.name,
+          measurement: ingredient.measurement
+        }
+      end,
+      instructions: recipe.instructions.map do |instruction|
+        {
+          id: instruction.id,
+          recipe_id: instruction.recipe_id,
+          step: instruction.step
+        }
+      end
+    }
+  end
+
   private
   def recipe_params
-    params.permit(:title, :description, :image, :keto, :gluten_free, :low_calorie, :paleo, :dairy_free, :vegetarian, :quick, :calories, :net_carbs, :fat, :protein, :servings, {ingredients: ["name", "measurement"]}, {instructions: ["step"]})
+    params.permit(:id, :title, :description, :image, :keto, :gluten_free, :low_calorie, :paleo, :dairy_free, :vegetarian, :quick, :calories, :net_carbs, :fat, :protein, :servings, {ingredients: ["id", "name", "measurement"]}, {instructions: ["id", "step"]})
   end
 end
