@@ -88,9 +88,3 @@ k_taco_ingredient8 = Ingredient.create(recipe_id: korean_taco.id, name: "Pickled
 k_taco_ingredient9 = Ingredient.create(recipe_id: korean_taco.id, name: "Kimchi", measurement: "2 cups")
 k_taco_ingredient10 = Ingredient.create(recipe_id: korean_taco.id, name: "Avocado oil", measurement: "1 tablespoon")
 
-
-
-lineitem1 = Lineitem.create(order_id: order1.id, product_id: m_vneck_blk.id, quantity: 1)
-lineitem2 = Lineitem.create(order_id: order1.id, product_id: crew_neck.id, quantity: 1)
-
-
