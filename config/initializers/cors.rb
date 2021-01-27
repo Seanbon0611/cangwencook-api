@@ -33,7 +33,7 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
       credentials: true
   end
   allow do
-    origins 'http://cangwencook.com'
+    origins 'https://cangwencook.com'
 
     resource '*',
       headers: :any,
@@ -41,7 +41,7 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
       credentials: true
   end
   allow do
-    origins 'http://www.cangwencook.com'
+    origins 'https://www.cangwencook.com'
 
     resource '*',
       headers: :any,
