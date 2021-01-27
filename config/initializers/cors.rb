@@ -33,7 +33,15 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
       credentials: true
   end
   allow do
-    origins 'whispering-beach-85385.herokuapp.com'
+    origins 'http://cangwencook.com'
+
+    resource '*',
+      headers: :any,
+      methods: [:get, :post, :put, :patch, :delete, :options, :head],
+      credentials: true
+  end
+  allow do
+    origins 'http://www.cangwencook.com'
 
     resource '*',
       headers: :any,
