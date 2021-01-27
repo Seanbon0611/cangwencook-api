@@ -23,11 +23,9 @@ default: &default
 
 development:
   <<: *default
-  host: <%= Rails.application.credentials.database[:host] %>
-  username: <%= Rails.application.credentials.database[:user] %>
-  database: <%= Rails.application.credentials.database[:db] %>
-  port: <%= Rails.application.credentials.database[:port] %>
-  password: <%= Rails.application.credentials.database[:password] %>
+  port: 5431
+  database: cangwencook_api_development
+  username: postgres
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -84,8 +82,6 @@ test:
 #
 production:
   <<: *default
-  host: <%= Rails.application.credentials.database[:host] %>
-  username: <%= Rails.application.credentials.database[:user] %>
-  database: <%= Rails.application.credentials.database[:db] %>
-  port: <%= Rails.application.credentials.database[:port] %>
-  password: <%= Rails.application.credentials.database[:password] %>
+  database: cangwencook_api_production
+  username: postgres
+  # password: <%= ENV['CANGWENCOOK_API_DATABASE_PASSWORD'] %>
