@@ -63,6 +63,26 @@ Rails.application.configure do
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
 
+  config.active_storage.service = :google
+  config.action_controller.default_url_options = {host: 'https://whispering-beach-85385.herokuapp.com'}
+  # Don't care if the mailer can't send.
+  config.action_mailer.raise_delivery_errors = false
+
+  config.action_mailer.perform_caching = false
+
+  config.action_mailer.delivery_method = :smtp
+  host='https://whispering-beach-85385.herokuapp.com'
+  config.action_mailer.default_url_options = { host: host, protocol: 'http'}
+
+  config.action_mailer.smtp_settings = {
+    :address              =>  'smtp.gmail.com',
+    :port                 =>  '587',
+    :user_name            =>  Rails.application.credentials.gmail[:username],
+    :password             =>  Rails.application.credentials.gmail[:password],
+    :authentication       =>  'plain',
+    :enalbe_starttls_auto =>  true
+  }
+
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
 
