@@ -1,5 +1,5 @@
 class PasswordResetsController < ApplicationController
-  before_action :set_user, only: [:edit, :update, :create]
+  before_action :set_user, only: [:edit, :update]
   def create
     user = User.find_by(email: params[:email])
     if user
