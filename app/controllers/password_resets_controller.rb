@@ -1,12 +1,14 @@
 class PasswordResetsController < ApplicationController
-  before_action :set_user, only: [:edit, :update]
+  before_action :set_user, only: [:edit, :update, :create]
   def create
     user = User.find_by(email: params[:email])
     if user
       user.generate_password_token!
       UserMailer.password_reset(user).deliver_now
+      render json: {msg: "Email successful", email: user.email}, status:200
+    else 
+      render json: {msg: "Error", error: "There was an error"}, status:500
     end
-    render json: {msg: "Email successful", email: user.email}, status:200
   end
  
   def edit
