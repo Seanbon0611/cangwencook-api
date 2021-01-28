@@ -8,7 +8,7 @@ class PasswordResetsController < ApplicationController
     end
     render json: {msg: "Email successful", email: user.email}, status:200
   end
-
+ 
   def edit
     render json: :ok
   end
