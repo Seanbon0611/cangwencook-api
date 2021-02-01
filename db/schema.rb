@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_30_032051) do
+ActiveRecord::Schema.define(version: 2021_01_29_224856) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -116,18 +116,13 @@ ActiveRecord::Schema.define(version: 2020_12_30_032051) do
     t.boolean "instantpot"
     t.boolean "airfryer"
     t.boolean "freezermeal"
+    t.string "link"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
     t.string "email"
-    t.string "phone_number"
-    t.string "address1"
-    t.string "address2"
-    t.string "city"
-    t.string "state"
-    t.integer "zipcode"
     t.string "password_digest"
     t.boolean "is_admin", default: false
     t.datetime "created_at", precision: 6, null: false
