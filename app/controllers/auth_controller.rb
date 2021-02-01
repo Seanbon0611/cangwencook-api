@@ -17,6 +17,8 @@ class AuthController < ApplicationController
     if logged_in?
       cookies.signed[:jwt] = {value: token, httponly: true, expires: 3.hours.from_now}
       respond_logged_in 2.hours.from_now
+    else 
+      render json: {msg: "No User"}, status: 200
     end
   end
 
