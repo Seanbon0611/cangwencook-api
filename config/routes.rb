@@ -36,4 +36,5 @@ Rails.application.routes.draw do
   
   #active campaign
   post 'new_contact', to: 'active_campaign#new_contact'
+  get 'all_contacts', to: 'active_campaign#all_contacts'
 end
