@@ -33,4 +33,7 @@ Rails.application.routes.draw do
   patch 'reset_password', to: 'password_resets#reset'
 
   post 'images/direct_upload', to: "uploads#create"
+  
+  #active campaign
+  post 'new_contact', to: 'active_campaign#new_contact'
 end
