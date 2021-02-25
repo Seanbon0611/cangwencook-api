@@ -10,6 +10,11 @@ class ActiveCampaignController < ApplicationController
     render json: {contacts: http}
   end
 
+  def add_tag_to_contact
+    http = HTTParty.post("#{Rails.application.credentials.activecampaign[:url]}/api/3/contactTags", headers: {"Api-Token" => "#{Rails.application.credentials.activecampaign[:key]}"}, body: {contactTag: {contact: params[:contact], tag: params[:tag]}}.to_json)
+    render json: {response: http}
+  end
+
   private
   def active_campaign_params
     params.permit(:id, :contact, :email, :first_name, :last_name, :phone)
