@@ -38,4 +38,10 @@ Rails.application.routes.draw do
   post 'new_contact', to: 'active_campaign#new_contact'
   get 'all_contacts', to: 'active_campaign#all_contacts'
   post 'tag', to: 'active_campaign#add_tag_to_contact'
+
+  #feedback
+  post 'feedback', to: 'feedback#create'
+
+  #collaborate
+  post 'collaborate', to: 'collaborate#create'
 end
