@@ -17,6 +17,6 @@ class ActiveCampaignController < ApplicationController
 
   private
   def active_campaign_params
-    params.permit(:id, :contact, :email, :first_name, :last_name, :phone)
+    params.permit(:id, :contact, :email, :first_name, :last_name, :phone) 
   end
 end
