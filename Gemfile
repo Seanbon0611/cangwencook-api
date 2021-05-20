@@ -30,6 +30,7 @@ gem 'fast_jsonapi'
 gem 'stripe'
 gem 'google-cloud-storage'
 gem 'httparty'
+gem 'ddtrace'
 gem 'pry'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
